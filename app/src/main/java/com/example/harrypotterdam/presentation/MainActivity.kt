@@ -6,6 +6,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat.startActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.bumptech.glide.Glide
@@ -32,6 +33,7 @@ class MainActivity : AppCompatActivity() {
 
 
     }
+
     private fun setupObserver() {
         val characterObserver = Observer<HarryPotterViewModel.UiState> { uiState ->
             uiState.characters?.let {
@@ -51,6 +53,7 @@ class MainActivity : AppCompatActivity() {
         viewModel.uiState.observe(this, characterObserver)
 
     }
+
     private fun bindData(characters: List<Characters>) {
         findViewById<TextView>(R.id.nameCharacter1).text = characters[0].name
         findViewById<TextView>(R.id.houseCharacter1).text = characters[0].house
@@ -68,17 +71,19 @@ class MainActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.houseCharacter4).text = characters[3].house
         val imageView4 = findViewById<ImageView>(R.id.imageCharacter4)
         imageView4.loadUrl(characters[3].image)
-
-        }
-
-
-    }
-    private fun showError(error: ErrorApp){
-        when(error){
-            ErrorApp.DataErrorApp -> TODO()
-            ErrorApp.InternetErrorApp -> TODO()
-            ErrorApp.ServerErrorApp -> TODO()
-            ErrorApp.UnknowErrorApp -> TODO()
-            ErrorApp.TestErrorApp -> TODO()
+        findViewById<ImageView>(R.id.imageCharacter1).setOnClickListener {
+            navigateToCharacterDetail(characters[0].id)
         }
     }
+
+
+    private fun navigateToCharacterDetail(characterId: String) {
+        startActivity(HarryPotterCharactersDetailActivity.getIntent(this, characterId))
+    }
+
+
+}
+
+
+
+

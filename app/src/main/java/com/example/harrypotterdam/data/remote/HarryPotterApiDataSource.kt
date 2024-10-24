@@ -14,5 +14,8 @@ class HarryPotterApiDataSource {
         return characters
     }
 
+    fun getCharacter(id: String): Characters {
+        return characters.first { it.id == id }
+    }
 
 }

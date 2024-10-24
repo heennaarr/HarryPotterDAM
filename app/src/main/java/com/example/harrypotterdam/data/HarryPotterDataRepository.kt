@@ -11,4 +11,8 @@ class HarryPotterDataRepository(
         return apiDataSource.getCharacters()
 
     }
+    override fun getCharacter(id: String): Characters {
+        return apiDataSource.getCharacter(id)
+    }
+
 }
