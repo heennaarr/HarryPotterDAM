@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="10dp"
+    tools:context=".presentation.MainActivity"
+
+   >
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageCharacter1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:src="@tools:sample/avatars"
+
+        >
+
+    </ImageView>
+    <TextView
+        android:layout_marginStart="5dp"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:id="@+id/nameCharacter1"
+        app:layout_constraintLeft_toRightOf="@id/imageCharacter1"
+        app:layout_constraintTop_toTopOf="parent"
+
+        />
+    <TextView
+        android:layout_marginStart="5dp"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/houseCharacter1"
+        app:layout_constraintLeft_toRightOf="@id/imageCharacter1"
+        app:layout_constraintTop_toBottomOf="@id/nameCharacter1"
+
+        />
+
+    <ImageView
+        android:layout_marginTop="5dp"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageCharacter2"
+        app:layout_constraintTop_toBottomOf="@id/imageCharacter1"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:src="@tools:sample/avatars"
+        />
+
+    <TextView
+        android:layout_marginStart="5dp"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:id="@+id/nameCharacter2"
+        app:layout_constraintLeft_toRightOf="@id/imageCharacter2"
+        app:layout_constraintTop_toBottomOf="@id/imageCharacter1"
+        />
+    <TextView
+        android:layout_marginStart="5dp"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/houseCharacter2"
+        app:layout_constraintLeft_toRightOf="@id/imageCharacter2"
+        app:layout_constraintTop_toBottomOf="@id/nameCharacter2"
+        />
+    <ImageView
+        android:layout_marginTop="5dp"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageCharacter3"
+        app:layout_constraintTop_toBottomOf="@id/imageCharacter2"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:src="@tools:sample/avatars"
+        />
+
+    <TextView
+        android:layout_marginStart="5dp"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/nameCharacter3"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toRightOf="@id/imageCharacter3"
+        app:layout_constraintTop_toBottomOf="@id/imageCharacter2"
+        />
+    <TextView
+        android:layout_marginStart="5dp"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/houseCharacter3"
+        app:layout_constraintLeft_toRightOf="@id/imageCharacter3"
+        app:layout_constraintTop_toBottomOf="@id/nameCharacter3"
+        />
+
+    <ImageView
+        android:layout_marginTop="5dp"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageCharacter4"
+        app:layout_constraintTop_toBottomOf="@id/imageCharacter3"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:src="@tools:sample/avatars"
+
+        />
+    <TextView
+        android:layout_marginStart="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/nameCharacter4"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toRightOf="@id/imageCharacter4"
+        app:layout_constraintTop_toBottomOf="@id/imageCharacter3"
+        />
+    <TextView
+        android:layout_marginStart="5dp"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/houseCharacter4"
+        app:layout_constraintLeft_toRightOf="@id/imageCharacter4"
+        app:layout_constraintTop_toBottomOf="@id/nameCharacter4"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
