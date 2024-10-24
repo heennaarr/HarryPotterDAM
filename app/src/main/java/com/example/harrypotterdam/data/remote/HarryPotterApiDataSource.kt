@@ -4,10 +4,10 @@ import com.example.harrypotterdam.domain.Characters
 
 class HarryPotterApiDataSource {
     private val characters = listOf(
-        Characters("1", "Harry Potter", "Gryffindor", "Male", "Gryffindor", "https://hp-api.onrender.com/api/characters/1"),
-        Characters("2 ","Hermione Granger", "Gryffindor", "Female",  "Gryffindor", "https://hp-api.onrender.com/api/characters/2"),
-        Characters("3","Ron Weasley", "Gryffindor", "Male", "Gryffindor", "https://hp-api.onrender.com/api/characters/3"),
-        Characters("4", "Draco Malfoy", "Slytherin", "Male", "Slytherin", "https://hp-api.onrender.com/api/characters/4")
+        Characters("1", "Harry Potter", "Gryffindor", "Male", "Gryffindor", "https://ik.imagekit.io/hpapi/harry.jpg"),
+        Characters("2 ","Hermione Granger", "Gryffindor", "Female",  "Gryffindor", "https://ik.imagekit.io/hpapi/hermione.jpeg"),
+        Characters("3","Ron Weasley", "Gryffindor", "Male", "Gryffindor", "https://ik.imagekit.io/hpapi/ron.jpg"),
+        Characters("4", "Draco Malfoy", "Slytherin", "Male", "Slytherin", "https://ik.imagekit.io/hpapi/draco.jpg")
         
     )
     fun getCharacters(): List<Characters> {

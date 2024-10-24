@@ -5,30 +5,47 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.MainActivity">
+    tools:context=".presentation.MainActivity"
+    android:layout_margin="10dp">
 
     <ImageView
-        android:layout_width="0dp"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:id="@+id/imageCharacter1"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:src="@tools:sample/avatars"
+
         >
 
     </ImageView>
     <TextView
+        android:layout_marginStart="5dp"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="hola"
+        android:textStyle="bold"
         android:id="@+id/nameCharacter1"
         app:layout_constraintLeft_toRightOf="@id/imageCharacter1"
         app:layout_constraintTop_toTopOf="parent"
 
        />
+    <TextView
+        android:layout_marginStart="5dp"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="hola1.1"
+        android:id="@+id/houseCharacter1"
+        app:layout_constraintLeft_toRightOf="@id/imageCharacter1"
+        app:layout_constraintTop_toBottomOf="@id/nameCharacter1"
+
+        />
 
     <ImageView
-        android:layout_width="0dp"
+        android:layout_marginTop="5dp"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:id="@+id/imageCharacter2"
         app:layout_constraintTop_toBottomOf="@id/imageCharacter1"
@@ -37,15 +54,29 @@
         />
 
     <TextView
+        android:layout_marginStart="5dp"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="hola2"
+        android:textStyle="bold"
         android:id="@+id/nameCharacter2"
         app:layout_constraintLeft_toRightOf="@id/imageCharacter2"
         app:layout_constraintTop_toBottomOf="@id/imageCharacter1"
         />
+    <TextView
+        android:layout_marginStart="5dp"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="hola2"
+        android:id="@+id/houseCharacter2"
+        app:layout_constraintLeft_toRightOf="@id/imageCharacter2"
+        app:layout_constraintTop_toBottomOf="@id/nameCharacter2"
+        />
     <ImageView
-        android:layout_width="0dp"
+        android:layout_marginTop="5dp"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:id="@+id/imageCharacter3"
         app:layout_constraintTop_toBottomOf="@id/imageCharacter2"
@@ -54,29 +85,56 @@
         />
 
     <TextView
+        android:layout_marginStart="5dp"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/nameCharacter3"
         android:text="hola3"
+        android:textStyle="bold"
         app:layout_constraintLeft_toRightOf="@id/imageCharacter3"
         app:layout_constraintTop_toBottomOf="@id/imageCharacter2"
          />
+    <TextView
+        android:layout_marginStart="5dp"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/houseCharacter3"
+        android:text="hola3"
+        app:layout_constraintLeft_toRightOf="@id/imageCharacter3"
+        app:layout_constraintTop_toBottomOf="@id/nameCharacter3"
+        />
 
     <ImageView
-        android:layout_width="0dp"
+        android:layout_marginTop="5dp"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:id="@+id/imageCharacter4"
         app:layout_constraintTop_toBottomOf="@id/imageCharacter3"
         app:layout_constraintStart_toStartOf="parent"
         tools:src="@tools:sample/avatars"
+
         />
     <TextView
+        android:layout_marginStart="5dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/nameCharacter4"
+        android:textStyle="bold"
         android:text="hola4"
         app:layout_constraintLeft_toRightOf="@id/imageCharacter4"
         app:layout_constraintTop_toBottomOf="@id/imageCharacter3"
      />
+    <TextView
+        android:layout_marginStart="5dp"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/houseCharacter4"
+        android:text="hola4.1"
+        app:layout_constraintLeft_toRightOf="@id/imageCharacter4"
+        app:layout_constraintTop_toBottomOf="@id/nameCharacter4"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
