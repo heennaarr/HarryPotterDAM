@@ -62,7 +62,7 @@ class HarryPotterFragment : Fragment() {
         viewModel.uiState.observe(viewLifecycleOwner, characterObserver)
     }
     private fun bindData(characters: List<Characters>) {
-        adapter.setData(characters)
+        adapter.submitList(characters)
 
     }
     private fun setupView(){
@@ -72,6 +72,9 @@ class HarryPotterFragment : Fragment() {
                 LinearLayoutManager.VERTICAL,
                 false
             )
+            adapter.setEvent { heroId ->
+                navigateToCharacterDetail(heroId)
+            }
             list.adapter = adapter
 
         }
