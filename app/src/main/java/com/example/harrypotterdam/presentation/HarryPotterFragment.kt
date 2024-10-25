@@ -9,6 +9,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import com.example.harrypotterdam.R
 import com.example.harrypotterdam.app.ErrorApp
 import com.example.harrypotterdam.app.Extensions.loadUrl
@@ -55,13 +56,16 @@ class HarryPotterFragment : Fragment() {
                 Log.d("@dev", " Cargado ...")
             }
         }
-        viewModel.uiState.observe(this, characterObserver)
+        viewModel.uiState.observe(viewLifecycleOwner, characterObserver)
     }
     private fun bindData(characters: List<Characters>) {
         binding.nameCharacter1.text = characters[0].name
         binding.houseCharacter1.text = characters[0].house
         val imageView1 = binding.imageCharacter1
         imageView1.loadUrl(characters[0].image)
+        binding.imageCharacter1.setOnClickListener {
+            navigateToCharacterDetail(characters[0].id)
+        }
         binding.nameCharacter2.text = characters[1].name
         binding.houseCharacter2.text = characters[1].house
         val imageView2 = binding.imageCharacter2
@@ -80,7 +84,9 @@ class HarryPotterFragment : Fragment() {
 
 
     private fun navigateToCharacterDetail(characterId: String) {
-        startActivity(HarryPotterCharactersDetailActivity.getIntent(requireContext(), characterId))
+        findNavController().navigate(
+            HarryPotterFragmentDirections.actionHarryPotterFragmentToHarryPotterDetailFragment(characterId)
+        )
     }
     override fun onDestroyView() {
         super.onDestroyView()

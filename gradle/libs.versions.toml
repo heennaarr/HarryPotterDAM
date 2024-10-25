@@ -12,9 +12,12 @@ constraintlayout = "2.1.4"
 lifecycleViewmodelKtx ="2.8.6"
 glide = "4.16.0"
 navigationComponent = "2.8.3"
+navigationFragmentKtx = "2.6.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-navigation-fragment-ktx-v260 = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navigationFragmentKtx" }
+androidx-navigation-ui-ktx = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "navigationFragmentKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
@@ -27,8 +30,9 @@ glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "gl
 nav-ui =  { group = "androidx.navigation", name = "navigation-ui", version.ref = "navigationComponent" }
 nav-fragment = { group = "androidx.navigation", name = "navigation-fragment", version.ref = "navigationComponent" }
 nav-fragment-ktx = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigationComponent" }
-
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+navigation-safeargs-kotlin = { id = "androidx.navigation.safeargs.kotlin", version.ref = "navigationComponent" }
+
 

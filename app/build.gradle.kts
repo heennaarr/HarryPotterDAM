@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.navigation.safeargs.kotlin)
 }
 
 android {
@@ -47,6 +48,8 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     implementation(libs.nav.ui)
     implementation(libs.nav.fragment)
+    implementation(libs.androidx.navigation.fragment.ktx.v260) // Replace with your version
+    implementation(libs.androidx.navigation.ui.ktx)
     api(libs.nav.fragment.ktx)
     testImplementation(libs.junit)
 

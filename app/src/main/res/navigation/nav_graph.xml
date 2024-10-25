@@ -9,6 +9,23 @@
         android:id="@+id/harryPotter_fragment"
         android:name="com.example.harrypotterdam.presentation.HarryPotterFragment"
         android:label="@layout/fragment_harrypotter">
+        <action
+            android:id="@+id/action_harryPotter_fragment_to_harryPotter_detail_fragment"
+            app:destination="@id/harryPotter_detail_fragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/harryPotter_detail_fragment"
+        android:name="com.example.harrypotterdam.presentation.HarryPotterCharactersDetailFragment"
+        android:label="@layout/fragment_harrypotterdetail">
+        <action
+            android:id="@+id/action_harryPotter_detail_fragment_to_harryPotter_fragment"
+            app:destination="@id/harryPotter_fragment" />
+
+        <argument
+            android:name="characterId"
+            app:argType="string" />
 
     </fragment>
 
