@@ -10,6 +10,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import com.example.harrypotterdam.R
+import com.example.harrypotterdam.app.ErrorApp
 import com.example.harrypotterdam.app.Extensions.loadUrl
 import com.example.harrypotterdam.databinding.FragmentHarrypotterBinding
 import com.example.harrypotterdam.domain.Characters
@@ -26,9 +27,18 @@ class HarryPotterFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
+        _binding = FragmentHarrypotterBinding.inflate(inflater, container, false)
         return binding.root
     }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        charactersFactory = HarryPotterFactory(requireContext())
+        viewModel= charactersFactory.getCharactersListViewModel()
+        viewModel.loadCharacters()
+        setupObserver()
+    }
+
     private fun setupObserver() {
         val characterObserver = Observer<HarryPotterViewModel.UiState> { uiState ->
             uiState.characters?.let {
@@ -71,5 +81,18 @@ class HarryPotterFragment : Fragment() {
 
     private fun navigateToCharacterDetail(characterId: String) {
         startActivity(HarryPotterCharactersDetailActivity.getIntent(requireContext(), characterId))
+    }
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+    private fun showError(error: ErrorApp){
+        when(error){
+            ErrorApp.DataErrorApp -> TODO()
+            ErrorApp.InternetErrorApp -> TODO()
+            ErrorApp.ServerErrorApp -> TODO()
+            ErrorApp.UnknowErrorApp -> TODO()
+            ErrorApp.TestErrorApp -> TODO()
+        }
     }
 }
