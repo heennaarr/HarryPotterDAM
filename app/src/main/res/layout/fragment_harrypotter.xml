@@ -10,126 +10,17 @@
 
    >
 
-    <ImageView
-        android:layout_width="150dp"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/imageCharacter1"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:src="@tools:sample/avatars"
-
+        tools:listitem="@layout/view_harrypotter_item"
+        app:layout_constraintTop_toTopOf="parent"
         >
 
-    </ImageView>
-    <TextView
-        android:layout_marginStart="5dp"
-
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:id="@+id/nameCharacter1"
-        app:layout_constraintLeft_toRightOf="@id/imageCharacter1"
-        app:layout_constraintTop_toTopOf="parent"
-
-        />
-    <TextView
-        android:layout_marginStart="5dp"
-
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/houseCharacter1"
-        app:layout_constraintLeft_toRightOf="@id/imageCharacter1"
-        app:layout_constraintTop_toBottomOf="@id/nameCharacter1"
-
-        />
-
-    <ImageView
-        android:layout_marginTop="5dp"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageCharacter2"
-        app:layout_constraintTop_toBottomOf="@id/imageCharacter1"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:src="@tools:sample/avatars"
-        />
-
-    <TextView
-        android:layout_marginStart="5dp"
-
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:id="@+id/nameCharacter2"
-        app:layout_constraintLeft_toRightOf="@id/imageCharacter2"
-        app:layout_constraintTop_toBottomOf="@id/imageCharacter1"
-        />
-    <TextView
-        android:layout_marginStart="5dp"
-
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/houseCharacter2"
-        app:layout_constraintLeft_toRightOf="@id/imageCharacter2"
-        app:layout_constraintTop_toBottomOf="@id/nameCharacter2"
-        />
-    <ImageView
-        android:layout_marginTop="5dp"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageCharacter3"
-        app:layout_constraintTop_toBottomOf="@id/imageCharacter2"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:src="@tools:sample/avatars"
-        />
-
-    <TextView
-        android:layout_marginStart="5dp"
-
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/nameCharacter3"
-        android:textStyle="bold"
-        app:layout_constraintLeft_toRightOf="@id/imageCharacter3"
-        app:layout_constraintTop_toBottomOf="@id/imageCharacter2"
-        />
-    <TextView
-        android:layout_marginStart="5dp"
-
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/houseCharacter3"
-        app:layout_constraintLeft_toRightOf="@id/imageCharacter3"
-        app:layout_constraintTop_toBottomOf="@id/nameCharacter3"
-        />
-
-    <ImageView
-        android:layout_marginTop="5dp"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageCharacter4"
-        app:layout_constraintTop_toBottomOf="@id/imageCharacter3"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:src="@tools:sample/avatars"
-
-        />
-    <TextView
-        android:layout_marginStart="5dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/nameCharacter4"
-        android:textStyle="bold"
-        app:layout_constraintLeft_toRightOf="@id/imageCharacter4"
-        app:layout_constraintTop_toBottomOf="@id/imageCharacter3"
-        />
-    <TextView
-        android:layout_marginStart="5dp"
-
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/houseCharacter4"
-        app:layout_constraintLeft_toRightOf="@id/imageCharacter4"
-        app:layout_constraintTop_toBottomOf="@id/nameCharacter4"
-        />
-
+    </androidx.recyclerview.widget.RecyclerView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

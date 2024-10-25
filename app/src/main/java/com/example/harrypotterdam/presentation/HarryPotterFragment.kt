@@ -10,6 +10,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.harrypotterdam.R
 import com.example.harrypotterdam.app.ErrorApp
 import com.example.harrypotterdam.app.Extensions.loadUrl
@@ -23,6 +24,7 @@ class HarryPotterFragment : Fragment() {
 
     private var _binding : FragmentHarrypotterBinding?=null
     private val binding get() = _binding!!
+    private val adapter = HarryPotterAdapter()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -30,6 +32,7 @@ class HarryPotterFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentHarrypotterBinding.inflate(inflater, container, false)
+        setupView()
         return binding.root
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -59,29 +62,20 @@ class HarryPotterFragment : Fragment() {
         viewModel.uiState.observe(viewLifecycleOwner, characterObserver)
     }
     private fun bindData(characters: List<Characters>) {
-        binding.nameCharacter1.text = characters[0].name
-        binding.houseCharacter1.text = characters[0].house
-        val imageView1 = binding.imageCharacter1
-        imageView1.loadUrl(characters[0].image)
-        binding.imageCharacter1.setOnClickListener {
-            navigateToCharacterDetail(characters[0].id)
-        }
-        binding.nameCharacter2.text = characters[1].name
-        binding.houseCharacter2.text = characters[1].house
-        val imageView2 = binding.imageCharacter2
-        imageView2.loadUrl(characters[1].image)
-        binding.nameCharacter3.text = characters[2].name
-        binding.houseCharacter3.text = characters[2].house
-        val imageView3 = binding.imageCharacter3
-        imageView3.loadUrl(characters[2].image)
-        binding.nameCharacter4.text = characters[3].name
-        binding.houseCharacter4.text = characters[3].house
-        val imageView4 = binding.imageCharacter4
-        imageView4.loadUrl(characters[3].image)
-
+        adapter.setData(characters)
 
     }
+    private fun setupView(){
+        binding.apply {
+            list.layoutManager = LinearLayoutManager(
+                this@HarryPotterFragment.requireContext(),
+                LinearLayoutManager.VERTICAL,
+                false
+            )
+            list.adapter = adapter
 
+        }
+    }
 
     private fun navigateToCharacterDetail(characterId: String) {
         findNavController().navigate(
