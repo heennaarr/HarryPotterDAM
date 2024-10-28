@@ -1,6 +1,11 @@
 package com.example.harrypotterdam.presentation
 
+import android.annotation.SuppressLint
+import android.graphics.Typeface
 import android.os.Bundle
+import android.text.SpannableString
+import android.text.Spanned
+import android.text.style.StyleSpan
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -67,15 +72,42 @@ class HarryPotterCharactersDetailFragment: Fragment() {
 
     private fun bindData(character: Characters){
         binding.nameCharacter.text = character.name
-        binding.houseCharacter.text = character.house
-        val imageView = binding.imageCharacter
-        imageView.loadUrl(character.image)
+        binding.imageCharacter.loadUrl(character.image)
+        val houseText = "Casa: ${character.house}"
+        binding.houseCharacter.text = createSpannableString(houseText, "Casa: ")
+
+        // Aplicar el formato en negrita a "Patronus:"
+        val patronusText = "Patronus: ${character.patronus}"
+        binding.patronusCharacter.text = createSpannableString(patronusText, "Patronus: ")
+
+        // Aplicar el formato en negrita a "Año de nacimiento:"
+        val birthYearText = "Año de nacimiento: ${character.birthYear}"
+        binding.birthYearCharacter.text = createSpannableString(birthYearText, "Año de nacimiento: ")
+
+        // Asignar la descripción
+        binding.description.text = "Descripción: ${character.occupation ?: "Información no disponible"}"
 
 
 
 
     }
+    private fun createSpannableString(fullText: String, boldPart: String): SpannableString {
+        val spannableString = SpannableString(fullText)
 
+        // Encontrar la posición del texto a poner en negrita
+        val start = fullText.indexOf(boldPart)
+        val end = start + boldPart.length
+
+        // Aplicar el estilo negrita al texto especificado
+        spannableString.setSpan(
+            StyleSpan(Typeface.BOLD),
+            start,
+            end,
+            Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
+        )
+
+        return spannableString
+    }
 
 
 }

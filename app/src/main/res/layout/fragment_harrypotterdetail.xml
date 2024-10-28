@@ -1,35 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    android:padding="16dp">
 
-    <ImageView
-        android:id="@+id/imageCharacter"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:src="@tools:sample/avatars"
-        >
-    </ImageView>
-
-    <TextView
-        android:id="@+id/nameCharacter"
-        android:layout_width="wrap_content"
-        android:text="hola henar si"
+    <!-- CardView para el detalle del personaje -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardCharacterDetail"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:textStyle="bold"
+        android:layout_margin="8dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="6dp"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imageCharacter" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/houseCharacter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameCharacter" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Imagen del personaje -->
+            <ImageView
+                android:id="@+id/imageCharacter"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:scaleType="centerCrop"
+                tools:src="@tools:sample/avatars" />
+
+            <!-- Nombre del personaje -->
+            <TextView
+                android:id="@+id/nameCharacter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Nombre del personaje"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textStyle="bold"
+                android:gravity="center_horizontal"
+                android:textColor="#000000"/>
+
+            <!-- Casa del personaje -->
+            <TextView
+                android:id="@+id/houseCharacter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Casa del personaje"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#757575"
+                android:gravity="center_horizontal"/>
+
+            <!-- Patronus del personaje -->
+            <TextView
+                android:id="@+id/patronusCharacter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Patronus: Patronus del personaje"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#757575"
+                android:gravity="start"/>
+
+            <!-- Año de nacimiento -->
+            <TextView
+                android:id="@+id/birthYearCharacter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Año de nacimiento: 1980"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#757575"
+                android:gravity="start"/>
+
+            <!-- Descripción adicional del personaje -->
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Descripción del personaje..."
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#333333"
+                android:gravity="start"/>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
