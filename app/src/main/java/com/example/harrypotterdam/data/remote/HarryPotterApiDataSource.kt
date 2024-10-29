@@ -2,8 +2,8 @@ package com.example.harrypotterdam.data.remote
 
 import com.example.harrypotterdam.domain.Characters
 
-class HarryPotterApiDataSource {
-    private val characters = listOf(
+class HarryPotterApiDataSource(private val harryPotterService: HarryPotterService) {
+   /* private val characters = listOf(
         Characters(
             id = "1",
             name = "Harry Potter",
@@ -89,6 +89,13 @@ class HarryPotterApiDataSource {
 
     fun getCharacter(id: String): Characters {
         return characters.first { it.id == id }
-    }
+    }*/
+   suspend fun buildClient(): List<Characters> {
+       //isSuccessful te dice que si ha ido  bien
+       harryPotterService.requestCharacters().body()!!
+       return emptyList()
+   }
+
+
 
 }

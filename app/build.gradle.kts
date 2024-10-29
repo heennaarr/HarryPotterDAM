@@ -50,6 +50,8 @@ dependencies {
     implementation(libs.nav.fragment)
     implementation(libs.androidx.navigation.fragment.ktx.v260) // Replace with your version
     implementation(libs.androidx.navigation.ui.ktx)
+    implementation(libs.retrofit)
+    implementation(libs.retrofitConverterGson)
     api(libs.nav.fragment.ktx)
     testImplementation(libs.junit)
 

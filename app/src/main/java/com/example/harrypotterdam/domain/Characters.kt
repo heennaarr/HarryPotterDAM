@@ -1,5 +1,4 @@
 package com.example.harrypotterdam.domain
-
 data class Characters(
     val id: String,
     val name: String,
@@ -7,17 +6,24 @@ data class Characters(
     val gender: String,
     val house: String,
     val image: String,
-    val birthYear: Int? = null,           // Año de nacimiento, opcional
-    val deathYear: Int? = null,           // Año de fallecimiento, opcional
-    val patronus: String? = null,          // Patronus del personaje, opcional
-    val wand: String? = null,              // Descripción de la varita, opcional
-    val bloodStatus: String? = null,       // Estado de sangre (sangre pura, mestizo, etc.), opcional
-    val ancestry: String? = null,          // Ancestros, opcional
-    val occupation: String? = null,        // Ocupación del personaje, opcional
-    val notableAchievements: List<String> = emptyList(), // Logros notables, opcional
+    val birthYear: Int? = null,
+    val deathYear: Int? = null,
+    val patronus: String? = null,
+    val wand: Wand? = null,                // Cambiado a tipo Wand
+    val bloodStatus: String? = null,
+    val ancestry: String? = null,
+    val occupation: String? = null,
+    val notableAchievements: List<String> = emptyList(),
     val dateOfBirth: String,
     val eyeColour: String,
     val actor: String
 ) {
-    // Puedes agregar métodos adicionales aquí si es necesario
+    // Métodos adicionales aquí si es necesario
 }
+data class Wand(
+    val wood: String? = null,
+    val core: String? = null,
+    val length: Double? = null
+)
+
+
