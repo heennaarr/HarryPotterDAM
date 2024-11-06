@@ -91,11 +91,16 @@ class HarryPotterApiDataSource(private val harryPotterService: HarryPotterServic
         return characters.first { it.id == id }
     }*/
    suspend fun buildClient(): List<Characters> {
-       //isSuccessful te dice que si ha ido  bien
-       harryPotterService.requestCharacters().body()!!
-       return emptyList()
+       val response = harryPotterService.requestCharacters()
+       if (response.isSuccessful) {
+           return response.body()!!.map {
+               it.toModel()
+           }
+       } else {
+           return emptyList()
+       }
+   }
    }
 
 
 
-}

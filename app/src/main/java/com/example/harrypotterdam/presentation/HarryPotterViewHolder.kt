@@ -15,7 +15,7 @@ class HarryPotterViewHolder(val view : View) : RecyclerView.ViewHolder(view) {
             binding = ViewHarrypotterItemBinding.bind(view)
 
             binding.apply {
-                image.loadUrl(model.image)
+                model.image?.let { image.loadUrl(it) }
                 name.text = model.name
                 house.text = model.house
             }

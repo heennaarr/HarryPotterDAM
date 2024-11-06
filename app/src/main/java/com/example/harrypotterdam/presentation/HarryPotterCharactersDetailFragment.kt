@@ -72,7 +72,7 @@ class HarryPotterCharactersDetailFragment: Fragment() {
 
     private fun bindData(character: Characters){
         binding.nameCharacter.text = character.name
-        binding.imageCharacter.loadUrl(character.image)
+        character.image?.let { binding.imageCharacter.loadUrl(it) }
         val houseText = "Casa: ${character.house}"
         binding.houseCharacter.text = createSpannableString(houseText, "Casa: ")
 
