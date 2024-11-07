@@ -1,7 +1,9 @@
 package com.example.harrypotterdam.data.remote
 
 import com.example.harrypotterdam.domain.Characters
+import org.koin.core.annotation.Single
 
+@Single
 class HarryPotterApiDataSource(private val harryPotterService: HarryPotterService) {
    /* private val characters = listOf(
         Characters(

@@ -5,22 +5,18 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.harrypotterdam.R
 import com.example.harrypotterdam.app.ErrorApp
-import com.example.harrypotterdam.app.Extensions.loadUrl
 import com.example.harrypotterdam.databinding.FragmentHarrypotterBinding
 import com.example.harrypotterdam.domain.Characters
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
 class HarryPotterFragment : Fragment() {
-    private lateinit var charactersFactory: HarryPotterFactory
-    private lateinit var viewModel: HarryPotterViewModel
+    val viewModel: HarryPotterViewModel by viewModel()
 
     private var _binding : FragmentHarrypotterBinding?=null
     private val binding get() = _binding!!
@@ -37,8 +33,6 @@ class HarryPotterFragment : Fragment() {
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        charactersFactory = HarryPotterFactory(requireContext())
-        viewModel= charactersFactory.getCharactersListViewModel()
         viewModel.loadCharacters()
         setupObserver()
     }

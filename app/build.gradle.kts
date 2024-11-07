@@ -1,3 +1,4 @@
+import org.gradle.kotlin.dsl.internal.sharedruntime.support.kotlinSourceNameOf
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -59,6 +60,7 @@ dependencies {
     implementation(libs.koin.annotations)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.glide)
+    implementation(libs.okhttp.log.interceptor)
 
     ksp(libs.koin.ksp)
     

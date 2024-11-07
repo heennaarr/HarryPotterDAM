@@ -7,8 +7,11 @@ import com.example.harrypotterdam.domain.GetCharactersUseCase
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.harrypotterdam.app.ErrorApp
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import org.koin.android.annotation.KoinViewModel
 
+@KoinViewModel
 class HarryPotterViewModel(
     private val getCharactersUseCase: GetCharactersUseCase
 ): ViewModel()  {
@@ -19,7 +22,7 @@ class HarryPotterViewModel(
     fun loadCharacters() {
         _uiState.value = UiState(isLoading = true)
 
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             val characters = getCharactersUseCase.invoke()
             _uiState.value = UiState(characters = characters)
         }
