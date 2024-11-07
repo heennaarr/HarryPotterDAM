@@ -1,6 +1,6 @@
-package com.example.harrypotterdam.data.remote
+package com.example.harrypotterdam.feature.harry_potter.data.remote
 
-import com.example.harrypotterdam.domain.Characters
+import com.example.harrypotterdam.feature.harry_potter.domain.Characters
 
 fun HarryPotterApiModel.toModel(): Characters {
     return Characters(

@@ -1,5 +1,6 @@
-package com.example.harrypotterdam.domain
-data class Characters(
+package com.example.harrypotterdam.feature.harry_potter.data.remote
+
+data class HarryPotterApiModel(
     val id: String,
     val name: String? = null,
     val species: String? = null,
@@ -15,8 +16,4 @@ data class Characters(
     val dateOfBirth: String? = null,
     val eyeColour: String? = null,
     val actor: String? = null
-) {
-
-}
-
-
+)

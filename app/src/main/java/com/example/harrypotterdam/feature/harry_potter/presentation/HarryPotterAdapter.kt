@@ -1,10 +1,10 @@
-package com.example.harrypotterdam.presentation
+package com.example.harrypotterdam.feature.harry_potter.presentation
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.example.harrypotterdam.R
 import androidx.recyclerview.widget.ListAdapter
-import com.example.harrypotterdam.domain.Characters
+import com.example.harrypotterdam.feature.harry_potter.domain.Characters
 
 class HarryPotterAdapter:  ListAdapter<Characters, HarryPotterViewHolder>(HarryPotterDiffUtil()) {
 

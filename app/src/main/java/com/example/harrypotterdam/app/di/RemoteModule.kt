@@ -11,7 +11,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 @Module
 @ComponentScan
 class RemoteModule {
-    private val url = "https://"
+    private val url = "https://hp-api.onrender.com/api/"
     @Single
     fun provideLogginInterceptor() = HttpLoggingInterceptor().apply {
         level = HttpLoggingInterceptor.Level.BODY

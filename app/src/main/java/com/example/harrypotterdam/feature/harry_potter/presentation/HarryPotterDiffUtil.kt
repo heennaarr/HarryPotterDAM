@@ -1,7 +1,7 @@
-package com.example.harrypotterdam.presentation
+package com.example.harrypotterdam.feature.harry_potter.presentation
 
 import androidx.recyclerview.widget.DiffUtil
-import com.example.harrypotterdam.domain.Characters
+import com.example.harrypotterdam.feature.harry_potter.domain.Characters
 
 class HarryPotterDiffUtil: DiffUtil.ItemCallback<Characters>() {
     override fun areItemsTheSame(oldItem: Characters, newItem: Characters): Boolean {

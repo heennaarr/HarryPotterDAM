@@ -1,4 +1,4 @@
-package com.example.harrypotterdam.presentation
+package com.example.harrypotterdam.feature.harry_potter.presentation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

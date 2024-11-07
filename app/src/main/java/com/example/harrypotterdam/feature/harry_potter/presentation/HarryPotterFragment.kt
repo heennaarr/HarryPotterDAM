@@ -1,4 +1,4 @@
-package com.example.harrypotterdam.presentation
+package com.example.harrypotterdam.feature.harry_potter.presentation
 
 import android.os.Bundle
 import android.util.Log
@@ -11,17 +11,17 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.harrypotterdam.app.ErrorApp
 import com.example.harrypotterdam.databinding.FragmentHarrypotterBinding
-import com.example.harrypotterdam.domain.Characters
+import com.example.harrypotterdam.feature.harry_potter.domain.Characters
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
 class HarryPotterFragment : Fragment() {
-    val viewModel: HarryPotterViewModel by viewModel()
+
 
     private var _binding : FragmentHarrypotterBinding?=null
     private val binding get() = _binding!!
     private val adapter = HarryPotterAdapter()
-
+    val viewModel: HarryPotterViewModel by viewModel()
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -75,9 +75,9 @@ class HarryPotterFragment : Fragment() {
     }
 
     private fun navigateToCharacterDetail(characterId: String) {
-        findNavController().navigate(
-            HarryPotterFragmentDirections.actionHarryPotterFragmentToHarryPotterDetailFragment(characterId)
-        )
+//        findNavController().navigate(
+//            //HarryPotterFragmentDirections.actionHarryPotterFragmentToHarryPotterDetailFragment(characterId)
+//        )
     }
     override fun onDestroyView() {
         super.onDestroyView()

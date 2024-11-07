@@ -1,10 +1,10 @@
-package com.example.harrypotterdam.presentation
+package com.example.harrypotterdam.feature.harry_potter.presentation
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.example.harrypotterdam.app.Extensions.loadUrl
 import com.example.harrypotterdam.databinding.ViewHarrypotterItemBinding
-import com.example.harrypotterdam.domain.Characters
+import com.example.harrypotterdam.feature.harry_potter.domain.Characters
 
 class HarryPotterViewHolder(val view : View) : RecyclerView.ViewHolder(view) {
 

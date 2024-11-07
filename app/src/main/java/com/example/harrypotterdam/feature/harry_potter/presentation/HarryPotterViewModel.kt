@@ -1,9 +1,9 @@
-package com.example.harrypotterdam.presentation
+package com.example.harrypotterdam.feature.harry_potter.presentation
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
-import com.example.harrypotterdam.domain.Characters
-import com.example.harrypotterdam.domain.GetCharactersUseCase
+import com.example.harrypotterdam.feature.harry_potter.domain.Characters
+import com.example.harrypotterdam.feature.harry_potter.domain.GetCharactersUseCase
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.harrypotterdam.app.ErrorApp
@@ -24,7 +24,8 @@ class HarryPotterViewModel(
 
         viewModelScope.launch(Dispatchers.IO) {
             val characters = getCharactersUseCase.invoke()
-            _uiState.value = UiState(characters = characters)
+            _uiState.postValue(UiState(characters = characters))
+
         }
     }
 
