@@ -10,7 +10,7 @@ class HarryPotter: Application() {
         super.onCreate()
         startKoin {
             androidContext(this@HarryPotter)
-            modules(AppModule().module)
+            //modules(AppModule().module)
         }
     }
 }
